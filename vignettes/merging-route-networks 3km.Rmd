@@ -27,9 +27,9 @@ library(stplanr)
 library(dplyr)
 library(tmap)
 library(sf)
-rnet_x = sf::read_sf("https://github.com/nptscot/npt/releases/download/rnet_3km_buffer/rnet_3km_buffer.geojson")
-rnet_y = sf::read_sf("https://github.com/nptscot/networkmerge/releases/download/v0.1/OS_3km.geojson")
 
+rnet_x = sf::read_sf("https://github.com/nptscot/networkmerge/releases/download/v0.1/OS_3km.geojson")
+rnet_y = sf::read_sf("https://github.com/nptscot/npt/releases/download/rnet_3km_buffer/rnet_3km_buffer.geojson")
 rnet_x <- st_set_crs(rnet_x, 4326)
 rnet_y <- st_set_crs(rnet_y, 4326)
 
