@@ -106,6 +106,8 @@ rnet_join = function(rnet_x, rnet_y, dist = 5, length_y = TRUE, key_column = 1,
     #   qtm(osm_net_example)
   } else {
     rnet_y_centroids = sf::st_centroid(rnet_y)
+    # record the geometry of corresponding line for centroids
+    rnet_y_centroids$corr_line_geometry = rnet_y$geometry
     rnetj = sf::st_join(rnet_x_buffer[key_column], rnet_y_centroids)
   }
 

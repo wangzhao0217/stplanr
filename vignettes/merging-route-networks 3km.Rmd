@@ -43,7 +43,8 @@ dim(rnet_x)
 rnet_x = rnet_subset(rnet_x, rnet_y, dist = 20)
 dim(rnet_x)
 rnet_x = rnet_subset(rnet_x, rnet_y, dist = 20, min_length = 5)
-dim(rnet_y)
+dim(rnet_x)
+
 ```
 
 ```{r}
@@ -65,7 +66,7 @@ for (name in name_list) {
 }
 
 rnet_merged = rnet_merge(rnet_x, rnet_y, dist = 20, segment_length = 20, funs = funs)
-
+st_write(rnet_merged, "G:/rnet_merged.geojson")
 tmap_mode("view")
 brks = c(0, 100, 500, 1000, 5000)
 m1 = tm_shape(rnet_y) + tm_lines("all_fastest_bicycle", palette = "viridis", lwd = 5, breaks = brks)  +
